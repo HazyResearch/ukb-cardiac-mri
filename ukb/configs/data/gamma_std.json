@@ -1,0 +1,14 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name"      :   "FrameSelectionStd",
+            "channel"   :   1,
+            "epsilon"   :   0.05
+        },
+        "Rescale_Intensity" : [0, 255],
+        "Gamma_Correction"  : {
+            "gamma" : 2.0,
+            "intensity" : 255.0
+        }
+    }
+}

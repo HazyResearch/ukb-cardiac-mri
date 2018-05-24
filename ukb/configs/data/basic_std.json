@@ -1,0 +1,9 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name"      :   "FrameSelectionStd",
+            "channel"   :   1,
+            "epsilon"   :   0.05
+        }
+    }
+}

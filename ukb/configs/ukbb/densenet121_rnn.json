@@ -1,0 +1,39 @@
+{
+   "model":"DenseNet121FrameRNN",
+   "model_class_params":{
+      "n_classes"           :   2,
+      "input_shape"         :   [3, 32, 32]
+   },
+   "model_param_grid":{
+      "rnn_type": [
+        "LSTM",
+         "GRU"
+      ],
+      "seq_output_size":[
+         64,
+         128
+      ],
+      "seq_dropout":[
+         0.10,
+         0.25,
+         0.50
+      ],
+      "seq_attention":[
+         true
+      ],
+      "seq_bidirectional":[
+         true
+      ],
+      "seq_max_len":[
+         15
+      ],
+      "batch_size":[
+         1,
+         2
+      ],
+      "lr":[
+        1e-4,
+        1e-3
+      ]
+   }
+}

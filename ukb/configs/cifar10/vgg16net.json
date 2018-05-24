@@ -1,0 +1,20 @@
+{
+   "model":"VGG16Net",
+   "model_class_params":{
+      "n_classes":10,
+      "output_size":512,
+      "use_cuda": false
+   },
+   "model_hyperparams":{
+   },
+   "model_param_grid":{
+      "batch_size":[
+         64,
+         128
+      ],
+      "lr":[
+         0.01,
+         0.001
+      ]
+   }
+}

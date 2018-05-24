@@ -1,0 +1,17 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVar"
+        },
+        "Rescale_Intensity" : [0.0, 255.0],
+        "Gamma_Correction"  : {
+            "gamma" : 2.0,
+            "intensity" : 1.0
+        }
+    },
+    "Augmentation"  :   {
+        "RandomTranslation"    :   {
+            "translate"  :   [0.2, 0.2]
+        }
+    }
+}

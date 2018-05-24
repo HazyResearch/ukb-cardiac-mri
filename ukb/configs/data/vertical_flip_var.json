@@ -1,0 +1,13 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVar"
+        },
+        "Rescale_Intensity" : [0.0, 255.0]
+    },
+    "Augmentation"  :   {
+        "RandomVerticalFlip"    :   {
+            "probability"  :   0.8
+        }
+    }
+}

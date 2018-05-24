@@ -1,0 +1,29 @@
+{
+   "model":"VGG16Net",
+   "model_class_params":{
+      "n_classes"       :   2,
+      "input_shape"     :   [3, 32, 32],
+      "vote_opt"        :   "mean"
+   },
+   "model_param_grid":{
+        "layers":[
+            [128, 64, 16],
+            [256, 16],
+            [512, 16]
+        ],
+        "dropout":[
+            0.1,
+            0.25,
+            0.5
+        ],
+        "batch_size":[
+            1,
+            2,
+            4
+        ],
+        "lr":[
+         1e-4,
+         1e-3
+        ]
+   }
+}

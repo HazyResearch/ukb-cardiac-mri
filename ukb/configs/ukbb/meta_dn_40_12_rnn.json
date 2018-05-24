@@ -1,0 +1,45 @@
+{
+   "model":"MetaDense4012FrameRNN",
+   "model_class_params":{
+      "n_classes"           :   2,
+      "input_shape"         :   [3, 32, 32],
+      "meta_input_shape"    :   7,
+      "seq_max_seq_len"     :   30,
+      "seq_dropout"         :   0.10,
+      "l2_penalty"          :   1e-4,
+      "seq_output_size"     :   128
+   },
+   "model_param_grid":{
+      "rnn_type": [
+         "GRU"
+      ],
+      "l2_penalty": [
+        1e-4,
+        1e-5
+      ],
+      "seq_output_size":[
+        192,
+        128,
+        256
+      ],
+      "seq_dropout":[
+        0.10,
+        0.25
+      ],
+      "seq_attention":[
+         true
+      ],
+      "seq_bidirectional":[
+         true
+      ],
+      "seq_max_len":[
+         30
+      ],
+      "batch_size":[
+         8
+      ],
+      "lr":[
+         1e-3
+      ]
+   }
+}

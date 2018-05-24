@@ -1,0 +1,18 @@
+{
+   "model":"LeNetFrameSum",
+   "model_class_params":{
+      "n_classes"       :   2,
+      "input_shape"     :   [3, 32, 32],
+      "frm_output_size" :   84
+   },
+   "model_param_grid":{
+      "batch_size":[
+         2,
+         4,
+         8
+      ],
+      "lr":[
+         1e-4
+      ]
+   }
+}

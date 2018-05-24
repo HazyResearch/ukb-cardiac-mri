@@ -1,0 +1,7 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVar"
+        }
+    }
+}

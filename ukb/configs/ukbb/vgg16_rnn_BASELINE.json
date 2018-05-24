@@ -1,0 +1,42 @@
+{
+   "model":"VGG16FrameRNN",
+   "model_class_params":{
+      "n_classes"           :   2,
+      "input_shape"         :   [3, 32, 32],
+      "seq_max_seq_len"     :   30,
+      "seq_bidirectional"   :   true,
+      "seq_attention"       :   true,
+      "seq_dropout"         :   0.25,
+      "seq_output_size"     :   64,
+      "seq_rnn_type"        :   "LSTM"
+   },
+   "model_param_grid":{
+      "seq_rnn_type": [
+         "GRU",
+         "LSTM"
+      ],
+      "seq_output_size":[
+         64,
+         128
+      ],
+      "seq_dropout":[
+         0.25,
+         0.50
+      ],
+      "seq_attention":[
+         true
+      ],
+      "seq_bidirectional":[
+         true
+      ],
+      "seq_max_len":[
+         30
+      ],
+      "batch_size":[
+         4
+      ],
+      "lr":[
+         1e-2
+      ]
+   }
+}

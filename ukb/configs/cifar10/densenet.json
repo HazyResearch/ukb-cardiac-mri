@@ -1,0 +1,20 @@
+{
+   "model":"DenseNet121Net",
+   "model_class_params":{
+      "n_classes":10,
+      "output_size":1024,
+      "use_cuda": false
+   },
+   "model_hyperparams":{
+   },
+   "model_param_grid":{
+      "batch_size":[
+         8,
+         32,
+         64
+      ],
+      "lr":[
+         1e-4
+      ]
+   }
+}

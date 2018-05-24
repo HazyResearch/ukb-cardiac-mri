@@ -1,0 +1,21 @@
+{
+   "model":"FNNFrameSum",
+   "model_class_params":{
+      "n_classes"       :   2,
+      "input_shape"     :   [1, 32, 32]
+   },
+   "model_param_grid":{
+      "frm_layers":[
+         [64, 32],
+         [128, 64]
+      ],
+      "batch_size":[
+         2,
+         4,
+         8
+      ],
+      "lr":[
+         1e-4
+      ]
+   }
+}

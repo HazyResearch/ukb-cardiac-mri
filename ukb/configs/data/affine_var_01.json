@@ -1,0 +1,19 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVar"
+        },
+        "Rescale_Intensity" : [0.0, 255.0]
+    },
+    "Augmentation"  :   {
+        "RandomAffine"    :   {
+            "degrees"   :   [-20, 20],
+            "translate" :   [0.25, 0.25],
+            "scale" : [0.8, 1.5],
+            "resample"  :   "BILINEAR"
+        }
+    },
+    "Postprocess" : {
+        "Name": "StdNormalize"
+    }
+}

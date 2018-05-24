@@ -1,0 +1,11 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVarMulti"
+        },
+        "RescaleIntensityMulti" : [0.0, 1.0]
+    },
+    "Postprocess" : {
+        "Name" : "RescaleIntensityMulti"
+    }
+}

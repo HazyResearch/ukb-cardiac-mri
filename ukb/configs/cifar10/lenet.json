@@ -1,0 +1,22 @@
+{
+   "model":"LeNet",
+   "model_class_params":{
+      "n_classes":10,
+      "n_channels":3,
+      "output_size":84,
+      "use_cuda": false
+   },
+   "model_hyperparams": {
+
+   },
+   "model_param_grid":{
+      "batch_size":[
+         32,
+         64,
+         128
+      ],
+      "lr":[
+         1e-4
+      ]
+   }
+}

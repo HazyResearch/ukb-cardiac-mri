@@ -1,0 +1,11 @@
+{
+    "Preprocess" : {
+        "FrameSelector"     : {
+            "name" : "FrameSelectionVar"
+        },
+        "Rescale_Intensity" : [0.0, 1.0]
+    },
+    "Postprocess" : {
+        "Name" : "StdNormalize"
+    }
+}
