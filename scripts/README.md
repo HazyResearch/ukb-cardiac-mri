@@ -1,5 +1,16 @@
 # Instructions
 
+## Basics
+In order to start up, change the arguments in `scaleup_base.sh` and `SupervisedAugmentation.sh`:
+```
+REPO="/dfs/scratch0/kexiao/ukb-cardiac-mri/ukb"
+TRAIN="/lfs/1/heartmri/coral32"
+DEV="/lfs/1/heartmri/dev32"
+SEMI="/lfs/1/heartmri/semi32"
+SEMI_CSV="labels_train.csv"
+```
+to the data and code location on the machine.
+
 ## For launching Weak Supervised model training
 ```
 ./WeakSupervised.sh
