@@ -1,0 +1,58 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+
+install:
+  - sudo apt-get update
+
+  - pip install --upgrade pip
+  - pip install pep257
+
+  # Must be installed before conda
+  - pip install auxlib # only needed for python3
+  - pip install ruamel.yaml
+  - pip install requests
+  - pip install pycosat
+
+  # apparently it's not safe to use pip to install conda
+  # https://github.com/conda/conda/issues/2420
+  # http://conda.pydata.org/docs/travis.html
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+
+  - conda create -y -n newenv numba futures
+  - source activate newenv
+
+  - pip install codecov
+  - pip install coveralls
+  - pip install codeclimate-test-reporter
+
+  # conda dependencies that pip does not install
+  - pip install enum34
+
+
+script:
+  - pep257
+  - ./test.py
+  - ./loadfg.py
+  - ./test_lf_learning.py
+  - NUMBA_DISABLE_JIT=1 coverage run -p test.py
+  - NUMBA_DISABLE_JIT=1 coverage run -p loadfg.py
+  - NUMBA_DISABLE_JIT=1 coverage run -p test_lf_learning.py
+  - coverage combine
+
+after_success:
+  - codecov
+  - coveralls
+  - codeclimate-test-reporter

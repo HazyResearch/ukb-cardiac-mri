@@ -1,0 +1,5 @@
+name: env
+dependencies:
+  - numba=0.28
+  - futures
+  - numpydoc
