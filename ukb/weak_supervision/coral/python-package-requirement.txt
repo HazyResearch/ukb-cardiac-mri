@@ -1,0 +1,15 @@
+bs4
+future
+futures
+ipywidgets
+jupyter
+lxml==3.6.4
+matplotlib
+numba
+git+https://github.com/HazyResearch/numbskull@coral
+numpy>=1.11
+pandas
+requests
+scipy>=0.18
+six
+tensorflow>=1.0

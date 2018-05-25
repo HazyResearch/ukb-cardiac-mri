@@ -1,0 +1,6 @@
+*/__pycache__/
+.vscode/
+*.swp
+*.pyc
+.DS_Store
+*.ipynb_checkpoints/
