@@ -56,7 +56,7 @@ Model configurations are found in `configs/<DATASET>/<MODEL>.json`
 ## IV. Segmenting and Localizing the Aortic Valve
 
 ### Preprocessing UKBB MRI Data
-All models above assume 32x32 - 48x48 input image size. Localizing MRIs to the just include the aortic valve can be done heuristically and acheive ~98% accuracy.
+All models above assume 32x32 - 48x48 input image size. Localizing MRIs to the just include the aortic valve can be done heuristically and acheive ~98% accuracy. (This step is not required for the synthetic data.)
 
 This will segment all patients:
 
