@@ -333,7 +333,7 @@ class UKBBCardiacMRI(Dataset):
 
     def convert_image(self, images):
         try:
-            images = np.squeeze(images)
+            images = np.array(images)
         except Exception as err:
             raise ValueError("image channels are having different shapes. \n ERR| {}".format(err))
 

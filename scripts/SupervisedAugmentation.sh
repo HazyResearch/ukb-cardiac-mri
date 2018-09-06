@@ -51,7 +51,7 @@ for seed in ${SEED}; do
                             --checkpoint_freq ${CKPNT_FREQ}
                             --series ${SERIES}
                             --outdir ${HOME_FOLDER}/results
-                            --seed ${SEED}
+                            --seed ${seed}
                             -R
                             --report
                             --use_cuda
@@ -61,8 +61,8 @@ for seed in ${SEED}; do
                             --data_seed 2018
                             --data_threshold 0.75
                             ${EXTRA_COMMAND}
-                            1>${HOME_FOLDER}/out/seed_${SEED}.out
-                            2>${HOME_FOLDER}/err/seed_${SEED}.err\n"
+                            1>${HOME_FOLDER}/out/seed_${seed}.out
+                            2>${HOME_FOLDER}/err/seed_${seed}.err\n"
     
     python ${TRAINER} --train ${TRAIN} \
                       --dev ${DEV} \
@@ -80,7 +80,7 @@ for seed in ${SEED}; do
                       --checkpoint_freq ${CKPNT_FREQ} \
                       --series ${SERIES} \
                       --outdir ${HOME_FOLDER}/results \
-                      --seed ${SEED} \
+                      --seed ${seed} \
                       -R \
                       --report \
                       --use_cuda \
@@ -90,6 +90,6 @@ for seed in ${SEED}; do
                       --data_seed 2018 \
                       --data_threshold 0.75 \
                       ${EXTRA_COMMAND} \
-                      1>${HOME_FOLDER}/out/seed_${SEED}.out \
-                      2>${HOME_FOLDER}/err/seed_${SEED}.err &
+                      1>${HOME_FOLDER}/out/seed_${seed}.out \
+                      2>${HOME_FOLDER}/err/seed_${seed}.err &
 done
