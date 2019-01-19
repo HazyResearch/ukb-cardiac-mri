@@ -11,7 +11,7 @@
 Bicuspid Aortic Valve (BAV) is the most common congenital malformation of the heart, occurring in 0.5-2% of the general population. We developed a weakly supervised deep learning model for BAV classification using up to 4,000 unlabeled cardiac MRI sequences.
 
 ## Repo Content
-* *notebooks/* - what's in here
+* *notebooks/* - Weak supervision notebooks.
 * *scripts/* - Launch scripts for Supervised model, Weakly-supervised model and Expert-Weakly supervised model
 * *ukb/* - the python code and config files needed for training the various models.
 * *data.zip* - data provided to run our pipeline (this is all synthetic data, no real patient data was used)
