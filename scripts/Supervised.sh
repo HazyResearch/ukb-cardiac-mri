@@ -7,7 +7,7 @@ DEV="data/dev32_gen"
 TEST="data/test32_gen"
 
 BATCH_SIZE=8
-N_EPOCHS=100
+N_EPOCHS=20
 N_MODELS=12
 UPDATE_FREQ=1
 CKPNT_FREQ=10
@@ -16,9 +16,9 @@ SERIES=0
 FRAMES=10
 METRIC="f1_score"
 
-HOME_FOLDER="SupervisedAugmentation"
+HOME_FOLDER="Supervised"
 MODEL_CONFIG="dn40_gru_min"
-DATA_CONFIG="affine_01"
+DATA_CONFIG="normalized_var_std"
 EXTRA_COMMAND=""
 
 if [ -z "${1}" ]; then

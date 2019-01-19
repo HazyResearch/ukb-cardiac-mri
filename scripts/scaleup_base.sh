@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPO="/dfs/scratch0/kexiao/ukb-cardiac-mri/ukb"
+REPO="ukb"
 TRAINER=${REPO}/"train.py"
 TRAIN="/lfs/1/heartmri/coral32"
 DEV="/lfs/1/heartmri/dev32"
