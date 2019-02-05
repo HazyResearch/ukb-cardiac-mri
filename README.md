@@ -120,7 +120,7 @@ so that you may utilize our provided data.
 ## III. How to Use
 We have provided various scripts to run our model. These scripts are located in the *scripts/* directory. To execute our example script run the following command:
 ```
-./scripts/execute_example_script.sh
+./scripts/Supervised.sh
 ```
 
 This will launch 5 different jobs taking about 7 GB of GPU memory. In addition, this entire run will take roughly 3.5 hrs. The expected output is (located in Experiments/out/seed_x.out, e.g. Supervised/out/seed_0.out):
