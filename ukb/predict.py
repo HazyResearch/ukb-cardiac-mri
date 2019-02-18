@@ -48,6 +48,7 @@ def score(model, data_loader, classes, threshold=0.5, seed=1234, use_cuda=False,
     if use_cuda:
         torch.cuda.manual_seed_all(seed)
 
+    model.eval()
     y_proba, y_pred = model.predict(data_loader, threshold=threshold, binary=len(classes)==2, return_proba=True, topSelection=topSelection)
     print(y_proba)
 
