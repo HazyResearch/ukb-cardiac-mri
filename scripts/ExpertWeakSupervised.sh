@@ -3,7 +3,7 @@
 FOLDER="ExpertWeakSupervised"
 
 DATA_CONFIG="normalized_var_std"
-MODEL_CONFIG="dn40_gru_min"
+MODEL_CONFIG="dn40_lstm_min"
 SAMPLE_TYPE=2
 
 #N_SAMPLES="108 216 432 864 1296 1728 3456 4264"

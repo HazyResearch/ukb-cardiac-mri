@@ -3,7 +3,7 @@
 FOLDER="ExpertWeakSupervisedAugmentation"
 
 DATA_CONFIG="affine_01"
-MODEL_CONFIG="dn40_gru_min"
+MODEL_CONFIG="dn40_lstm_min"
 SAMPLE_TYPE=2
 
 #N_SAMPLES="108 216 432 864 1296 1728 3456 4264"

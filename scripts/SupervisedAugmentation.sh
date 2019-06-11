@@ -17,7 +17,7 @@ FRAMES=10
 METRIC="f1_score"
 
 HOME_FOLDER="SupervisedAugmentation"
-MODEL_CONFIG="dn40_gru_min"
+MODEL_CONFIG="dn40_lstm_min"
 DATA_CONFIG="affine_01"
 EXTRA_COMMAND=""
 

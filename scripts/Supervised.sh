@@ -17,7 +17,7 @@ FRAMES=10
 METRIC="f1_score"
 
 HOME_FOLDER="Supervised"
-MODEL_CONFIG="dn40_gru_min"
+MODEL_CONFIG="dn40_lstm_min"
 DATA_CONFIG="normalized_var_std"
 EXTRA_COMMAND=""
 

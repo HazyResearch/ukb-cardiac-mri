@@ -3,14 +3,17 @@
    "model_class_params":{
       "n_classes"           :   2,
       "input_shape"         :   [3, 32, 32],
+      "rnn_type"            :   "LSTM",
       "seq_max_seq_len"     :   30,
       "seq_dropout"         :   0.10,
+      "seq_attention"       :   true,
+      "seq_bidirectional"   :   true,
       "l2_penalty"          :   1e-4,
       "seq_output_size"     :   128
    },
    "model_param_grid":{
       "rnn_type": [
-        "GRU"
+        "LSTM"
       ],
       "l2_penalty": [
         1e-2,
@@ -23,18 +26,13 @@
       ],
       "seq_dropout":[
          0.40,
-         0.50,
-         0.60,
-         0.80
+         0.60
       ],
       "seq_attention":[
          true
       ],
       "seq_bidirectional":[
          true
-      ],
-      "seq_max_len":[
-         30
       ],
       "batch_size":[
          8
