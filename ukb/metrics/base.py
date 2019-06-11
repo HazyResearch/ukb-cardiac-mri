@@ -10,6 +10,27 @@ from sklearn.metrics import f1_score, precision_score, recall_score, \
      accuracy_score, confusion_matrix, classification_report, log_loss, \
      roc_auc_score, roc_curve, precision_recall_curve, auc
 
+
+__all__ = ["binary_scores_from_counts",
+           "print_metricatk",
+           "print_scores",
+           "classification_summary",
+           "prc_auc_score",
+           "dcg_score",
+           "ndcg_score",
+           "ndcg_score2",
+           "f1_score",
+           "precision_score",
+           "recall_score",
+           "accuracy_score",
+           "confusion_matrix",
+           "classification_report",
+           "log_loss",
+           "roc_auc_score",
+           "roc_curve",
+           "precision_recall_curve",
+           "auc"]
+
 # wrappers for using data loaders to compute standard metrics
 
 
