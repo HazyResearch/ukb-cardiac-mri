@@ -220,6 +220,7 @@ def main(args):
     #  - model_class_params: params required to initialize model
     #  - model_param_grid:   hyperparameter search space
     model_class, model_class_params, model_param_grid = get_model_config(args)
+
     model_class_params["seq_max_seq_len"] = args.n_frames
     model_class_params["pretrained"] = args.pretrained
     model_class_params["requires_grad"] = args.requires_grad
@@ -237,10 +238,11 @@ def main(args):
                                 use_cuda=args.use_cuda, seed=args.seed)
 
     num_frames = args.n_frames if model_class.__name__ == "VGG16Net" else None
-    fit_time, model, _, tuned_threshold  = trainer.fit(train, dev, test, n_epochs=args.n_epochs, 
-                                             update_freq=args.update_freq, checkpoint_freq=args.checkpoint_freq, 
-                                             checkpoint_dir=checkpoint_dir, num_frames=num_frames, 
-                                             tune_metric=args.tune_metric, metric=args.early_stopping_metric, 
+    fit_time, model, _, tuned_threshold  = trainer.fit(train, dev, test,
+                                             n_epochs=args.n_epochs, checkpoint_burn=args.checkpoint_burn,
+                                             update_freq=args.update_freq, checkpoint_freq=args.checkpoint_freq,
+                                             checkpoint_dir=checkpoint_dir, num_frames=num_frames,
+                                             tune_metric=args.tune_metric, metric=args.early_stopping_metric,
                                              verbose=args.verbose)
 
     # ------------------------------------------------------------------------------
@@ -315,6 +317,7 @@ if __name__ == "__main__":
     argparser.add_argument("-T", "--tune_metric", type=str, default="roc_auc_score", help="the metric for "
                            "tuning the threshold. str-`roc_auc_score` for metric, float-`0.6` for fixed threshold")
     argparser.add_argument("-E", "--n_epochs", type=int, default=1, help="number of training epochs")
+    argparser.add_argument("--checkpoint_burn", type=int, default=1, help="minimum number of training epochs before checkpointing")
     argparser.add_argument("-M", "--n_procs", type=int, default=1, help="number processes (per model, CPU only)")
     argparser.add_argument("-W", "--n_workers", type=int, default=1, help="number of grid search workers")
     argparser.add_argument("-H", "--host_device", type=str, default="gpu", help="Host device (GPU|CPU)")

@@ -103,17 +103,19 @@ class Trainer(object):
         num_frames        = kwargs.get('num_frames', None)
         binary            = self.model_class_params.get('n_classes', 2) == 2
         verbose           = kwargs.get('verbose', False)
+        checkpoint_burn   = kwargs.get('checkpoint_burn', 1)
 
         logger.info("============================")
         logger.info("Trainer Config")
         logger.info("============================")
-        logger.info("lr:            {}".format(lr))
-        logger.info("momentum:      {}".format(momentum))
-        logger.info("tune_metric:   {}".format(tune_metric))
-        logger.info("batch_size:    {}".format(batch_size))
-        logger.info("l2_penalty:    {}".format(l2_penalty))
-        logger.info("num_frames:    {}".format(num_frames))
-        logger.info("use_scheduler: {}".format(use_scheduler))
+        logger.info("lr:                {}".format(lr))
+        logger.info("momentum:          {}".format(momentum))
+        logger.info("tune_metric:       {}".format(tune_metric))
+        logger.info("batch_size:        {}".format(batch_size))
+        logger.info("l2_penalty:        {}".format(l2_penalty))
+        logger.info("num_frames:        {}".format(num_frames))
+        logger.info("use_scheduler:     {}".format(use_scheduler))
+        logger.info("checkpoint_burn:   {}".format(checkpoint_burn))
 
         # get metric function
         metric = getattr(metrics, metric) if type(metric) is str else metric
@@ -184,7 +186,7 @@ class Trainer(object):
                                        avg_loss, "{:2.1f}".format(acc), int(correct), int(total)))
 
             # dev set checkpointing
-            if (epoch + 1) % checkpoint_freq == 0 or epoch + 1 == n_epochs:
+            if epoch + 1 >= checkpoint_burn and ((epoch + 1) % checkpoint_freq == 0 or epoch + 1 == n_epochs):
                 dev_true, dev_pred, dev_prob, dev_threshold = self._evaluate(model, dev_loader, "DEV", 
                                                                              binary=binary, 
                                                                              threshold=best_threshold,
