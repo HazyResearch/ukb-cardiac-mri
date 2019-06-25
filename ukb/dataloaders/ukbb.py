@@ -328,6 +328,15 @@ class UKBBCardiacMRI(Dataset):
         """
         return "Instances: {}".format(len(self))
 
+    def load_label(self, idx):
+        # most PyTorch operations are only defined over float or doublefloat (32 vs 64bit) tensors
+        if self.frame_label:
+            label = np.array(self.labels.iloc[idx, 2:8]).astype(float)
+        else:
+            label = self.labels.iloc[idx, 1]
+
+        return label
+
     def get_labels(self):
         return [(str(self.labels.iloc[i, 0]), data[1]) for i, data in enumerate(self)]
 
@@ -465,18 +474,14 @@ class UKBBCardiacMRI(Dataset):
         else:
             rootDir = self.root_dir
 
-        # most PyTorch operations are only defined over float or doublefloat (32 vs 64bit) tensors
-        if self.frame_label:
-            label = np.array(self.labels.iloc[idx, 2:8]).astype(float)
-        else:
-            label = self.labels.iloc[idx, 1]
-
         if (self.series == 3):
             series = self.flow_250_all(pid, rootDir)
         elif (self.series == 0):
             series = self.flow_250_MAG(pid, rootDir)
         else:
             series = self.flow_250_other(pid, rootDir)
+
+        label = self.load_label(idx)
 
         return (series, label)
 

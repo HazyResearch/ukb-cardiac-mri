@@ -163,14 +163,14 @@ def load_dataset(args):
 
         # use manually defined dev/test sets
         else:
-            dev = DataSet("{}/labels.csv".format(args.dev), args.dev,
+            dev = DataSet("{}/{}".format(args.dev, args.devcsv), args.dev,
                           series=args.series, N=args.n_frames,
                           image_type=args.image_type,
                           preprocess=preprocess_data,
                           postprocess=postprocess_data,
                           seed=args.data_seed)
             if args.test:
-                test = DataSet("{}/labels.csv".format(args.test), args.test,
+                test = DataSet("{}/{}".format(args.test, args.testcsv), args.test,
                                series=args.series, N=args.n_frames,
                                image_type=args.image_type,
                                preprocess=preprocess_data,
@@ -285,6 +285,8 @@ if __name__ == "__main__":
 
     argparser.add_argument("-d", "--dataset", type=str, default="UKBB", help="dataset name")
     argparser.add_argument("-L", "--labelcsv", type=str, default="labels.csv", help="dataset labels csv filename")
+    argparser.add_argument("--devcsv", type=str, default="labels.csv", help="dev set labels csv filename")
+    argparser.add_argument("--testcsv", type=str, default="labels.csv", help="test set labels csv filename")
 
     argparser.add_argument("--train", type=str, default=None, help="training set")
     argparser.add_argument("--dev", type=str, default=None, help="dev (validation) set")
