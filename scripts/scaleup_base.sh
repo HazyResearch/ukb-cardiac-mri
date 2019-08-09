@@ -43,6 +43,9 @@ printf "\n${TRAINER}
                         --train ${TRAIN}
                         --dev ${DEV}
                         --test ${DEV}
+                        --labelcsv ${TRAIN}/labels.csv
+                        --devcsv ${DEV}/labels.csv
+                        --testcsv ${DEV}/labels.csv
                         -c ${MODEL_CONFIG}
                         -a ${DATA_CONFIG}
                         -T ${METRIC}
@@ -77,6 +80,9 @@ printf "\n${TRAINER}
 python ${TRAINER} --train ${TRAIN} \
                   --dev ${DEV} \
                   --test ${DEV} \
+                  --labelcsv ${TRAIN}/labels.csv \
+                  --devcsv ${DEV}/labels.csv \
+                  --testcsv ${DEV}/labels.csv \
                   -c ${MODEL_CONFIG} \
                   -a ${DATA_CONFIG} \
                   -T ${METRIC} \

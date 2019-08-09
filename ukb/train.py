@@ -126,7 +126,7 @@ def load_dataset(args):
             else:
                 postprocess_data = compose_postprocessing(postprocessing)
 
-        train = DataSet("{}/{}".format(args.train, args.labelcsv), args.train,
+        train = DataSet(args.labelcsv, args.train,
                         series=args.series, N=args.n_frames,
                         image_type=args.image_type,
                         preprocess=preprocess_data,
@@ -163,14 +163,14 @@ def load_dataset(args):
 
         # use manually defined dev/test sets
         else:
-            dev = DataSet("{}/{}".format(args.dev, args.devcsv), args.dev,
+            dev = DataSet(args.devcsv, args.dev,
                           series=args.series, N=args.n_frames,
                           image_type=args.image_type,
                           preprocess=preprocess_data,
                           postprocess=postprocess_data,
                           seed=args.data_seed)
             if args.test:
-                test = DataSet("{}/{}".format(args.test, args.testcsv), args.test,
+                test = DataSet(args.testcsv, args.test,
                                series=args.series, N=args.n_frames,
                                image_type=args.image_type,
                                preprocess=preprocess_data,
