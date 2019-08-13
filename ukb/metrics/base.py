@@ -86,7 +86,7 @@ def print_scores(ntp, nfp, ntn, nfn,
     print("========================================\n")
 
 
-def classification_summary(y_true, y_pred, classes, y_proba):
+def classification_summary(y_true, y_pred, classes, y_proba, verbose=True):
     """
     Assumes binary classification
 
@@ -104,7 +104,8 @@ def classification_summary(y_true, y_pred, classes, y_proba):
         pos_acc = tp / float(tp + fn) if tp + fn > 0 else 0.0
         neg_acc = tn / float(tn + fp) if tn + fp > 0 else 0.0
         ndcg = ndcg_score(y_true, y_proba)
-        print_scores(tp, fp, tn, fn, pos_acc, neg_acc, prec, rec, f1, roc, prc, ndcg)
+        if verbose:
+            print_scores(tp, fp, tn, fn, pos_acc, neg_acc, prec, rec, f1, roc, prc, ndcg)
         header = ["ndcg", "roc", "prc", "precision", "recall", "f1", "pos_acc", "neg_acc", "tp", "fp", "tn", "fn"]
         return dict(zip(header,(ndcg, roc, prc, prec, rec, f1, pos_acc, neg_acc, tp, fp, tn, fn)))
     else:

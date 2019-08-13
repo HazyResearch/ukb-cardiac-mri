@@ -123,7 +123,6 @@ def load_dataset(args):
             else:
                 postprocess_data = compose_postprocessing(postprocessing)
 
-        #test = DataSet("{}/{}".format(args.test, args.labelcsv), args.test,
         test = DataSet(args.labelcsv, args.test,
                        series=args.series, N=args.n_frames,
                        image_type=args.image_type,

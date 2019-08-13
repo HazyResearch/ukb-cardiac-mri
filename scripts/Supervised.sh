@@ -70,7 +70,7 @@ for seed in ${SEED}; do
     
     python ${TRAINER} --train ${TRAIN} \
                       --dev ${DEV} \
-                      --test ${DEV} \
+                      --test ${TEST} \
                       --labelcsv ${TRAIN}/labels.csv \
                       --devcsv ${DEV}/labels.csv \
                       --testcsv ${TEST}/labels.csv \
