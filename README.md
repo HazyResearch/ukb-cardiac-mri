@@ -145,3 +145,24 @@ TP: 6 | FP: 8 | TN: 200 | FN: 2
 ========================================
 
 ```
+
+After all 5 different jobs are finished, another script is provided for generating predictions on the example DEV/TEST set, and collecting the ensemble of TEST results. To execute the script, simply run the following command:
+```
+./scripts/predict_Supervised.sh
+```
+The generated predictions will be located in Experiments/predictions, e.g. Supervised/predictions. And the collected results ensemble would be in Experiments/predictions/results_test/ensemble, e.g. Supervised/predictions/results_test/ensemble. The terminal output would look like this:
+```
+   Experiment SEED_0 SEED_14 SEED_57 SEED_123 SEED_1234 AVERAGE   STD MEDIAN     MV
+0     Pos.Acc   0.00    0.00    0.00     0.00      0.00    0.00  0.00   0.00   0.00
+1     Neg.Acc  93.10   94.25   89.66    91.95     96.55   93.10  2.30  98.85  94.25
+2   Precision   0.00    0.00    0.00     0.00      0.00    0.00  0.00   0.00   0.00
+3      Recall   0.00    0.00    0.00     0.00      0.00    0.00  0.00   0.00   0.00
+4          F1   0.00    0.00    0.00     0.00      0.00    0.00  0.00   0.00   0.00
+5         ROC  80.46   76.25   60.54    65.90     63.98   69.43  7.61  72.80  42.53
+6         PRC   7.50    7.30    3.95     4.56      5.22    5.70  1.44   5.42   1.67
+7        NDCG  33.73   33.60   27.05    28.06     31.94   30.88  2.80  30.72  26.98
+8          TP   0.00    0.00    0.00     0.00      0.00    0.00  0.00   0.00   0.00
+9          FP   6.00    5.00    9.00     7.00      3.00    6.00  2.00   1.00   5.00
+10         TN  81.00   82.00   78.00    80.00     84.00   81.00  2.00  86.00  82.00
+11         FN   3.00    3.00    3.00     3.00      3.00    3.00  0.00   3.00   3.00
+```

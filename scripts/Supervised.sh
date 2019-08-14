@@ -38,10 +38,10 @@ for seed in ${SEED}; do
     printf "\n${TRAINER}
                             --train ${TRAIN}
                             --dev ${DEV}
-                            --test ${TEST}
+                            --test ${DEV}
                             --labelcsv ${TRAIN}/labels.csv
                             --devcsv ${DEV}/labels.csv
-                            --testcsv ${TEST}/labels.csv
+                            --testcsv ${DEV}/labels.csv
                             -c ${MODEL_CONFIG}
                             -a ${DATA_CONFIG}
                             -T ${METRIC}
@@ -70,10 +70,10 @@ for seed in ${SEED}; do
     
     python ${TRAINER} --train ${TRAIN} \
                       --dev ${DEV} \
-                      --test ${TEST} \
+                      --test ${DEV} \
                       --labelcsv ${TRAIN}/labels.csv \
                       --devcsv ${DEV}/labels.csv \
-                      --testcsv ${TEST}/labels.csv \
+                      --testcsv ${DEV}/labels.csv \
                       -c ${MODEL_CONFIG} \
                       -a ${DATA_CONFIG} \
                       -T ${METRIC} \
