@@ -1,5 +1,9 @@
-# Weakly Supervised MRI Classification - Rare Aortic Valve Malformations
+# Weakly supervised classification of aortic valve malformations using unlabeled cardiac MRI sequences
 [![DOI](https://zenodo.org/badge/134775347.svg)](https://zenodo.org/badge/latestdoi/134775347)
+
+This is the code release for our paper in Nature Communications. 
+https://www.nature.com/articles/s41467-019-11012-3
+
 
 ## Content
 * Overview
